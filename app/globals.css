@@ -2,20 +2,18 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+
+body{
+    background-color: black;
+}
+.bg__overlay{
+    background-image: linear-gradient(to right,rgba(23, 23, 23, 0.192), rgba(253, 0, 0, 0.788));
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+.text-gold {
+    color: #ff0000; /* Golden color */
+    text-shadow: 0 0 5px #FFD700, 0 0 10px #FFD700, 0 0 15px #FFD700, 0 0 20px #FFD700;
+    background: linear-gradient(135deg, #FFD700, #FFBF00); /* Optional: gradient background for more depth */
+    background-clip: text;
   }
-}
-
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
-}
+  
