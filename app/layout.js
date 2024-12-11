@@ -19,7 +19,7 @@ export const metadata = {
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: "https://disco-khaki.com",
+    url: "https://disco-khaki.vercel.app",
     title: "Create Your Greeting Card",
     description: "Personalized greeting cards with unique designs and messages.",
     images: [
