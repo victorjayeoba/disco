@@ -2,7 +2,7 @@
 import Link from 'next/link';
 import { useParams, useRouter } from 'next/navigation';
 
-export default function Greeting() {
+export default function Greeting_land() {
   const params = useParams(); // Access dynamic route parameters
   const router = useRouter();
   const id = params.id; // Extract the "id" parameter from the route
@@ -79,7 +79,6 @@ if(window != undefined){
           className="hidden"
           autoPlay
           loop
-
         >
           <source src="/sounds/jingle_bell_sound.mp3" type="audio/mp3" />
           Your browser does not support the audio tag.

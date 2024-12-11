@@ -5,7 +5,7 @@ export default function Home() {
     <div className="min-h-screen bg-christmas bg-cover relative text-snow-white flex">
       {/* Background Video */}
       <video
-        className="absolute left-0 top-1/2 transform -translate-y-1/2 w-auto h-full object-cover -z-10"
+        className="absolute left-0 w-full top-1/2 transform -translate-y-1/2  right-0 h-full object-cover -z-10"
         autoPlay
         loop
         muted

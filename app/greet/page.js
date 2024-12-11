@@ -69,7 +69,7 @@ export default function Greet() {
         muted
         playsInline
       >
-        <source src="/video/hero_christmas.mp4" type="video/mp4" />
+        <source src="/video/1211.mp4" type="video/mp4" />
         Your browser does not support the video tag.
       </video>
 
