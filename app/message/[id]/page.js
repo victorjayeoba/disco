@@ -1,6 +1,6 @@
 import React from 'react';
 import Greeting_land from '../../components/greetings_land';
-import preview from "/image/preview.png"
+import preview from "../../public/image/preview.png"
 
 export async function generateMetadata({ params }) {
   // Extract `id` from params and decode it for name and message
