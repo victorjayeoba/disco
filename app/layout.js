@@ -1,7 +1,7 @@
 import localFont from "next/font/local";
 import "./globals.css";
 import Header from "./components/Header";
-import preview from "../public/image/preview.png"
+
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -26,7 +26,7 @@ export async function generateMetadata({ pathname }) {
       description: "Personalized greeting cards with unique designs and messages.",
       images: [
         {
-          url:preview,
+          url: "/image/preview.png",
           width: 1200,
           height: 630,
           alt: "Greeting Card Preview",
@@ -38,7 +38,7 @@ export async function generateMetadata({ pathname }) {
       site: "@VickyJya_media",
       title: "Create Your Greeting Card",
       description: "Personalized greeting cards with unique designs and messages.",
-      images: [preview],
+      images: [ "/image/preview.png"],
     },
   };
 

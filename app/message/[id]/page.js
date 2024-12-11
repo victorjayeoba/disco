@@ -1,6 +1,5 @@
 import React from 'react';
 import Greeting_land from '../../components/greetings_land';
-import preview from "../../public/image/preview.png"
 
 export async function generateMetadata({ params }) {
   // Extract `id` from params and decode it for name and message
@@ -17,7 +16,7 @@ export async function generateMetadata({ params }) {
       description: message,
       images: [
         {
-          url: preview,
+          url: "/image/preview.png",
           width: 1200,
           height: 630,
           alt: "Greeting Card Preview",
@@ -29,7 +28,7 @@ export async function generateMetadata({ params }) {
       site: "@yourTwitterHandle",
       title: `Greeting for ${name}`,
       description: message,
-      images: [preview],
+      images: [ "/image/preview.png"],
     },
   };
 }
