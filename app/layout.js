@@ -1,6 +1,7 @@
 import localFont from "next/font/local";
 import "./globals.css";
 import Header from "./components/Header";
+import preview from "/image/preview.png"
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -25,7 +26,7 @@ export async function generateMetadata({ pathname }) {
       description: "Personalized greeting cards with unique designs and messages.",
       images: [
         {
-          url: "https://www.pngmart.com/files/11/Father-Christmas-PNG-Transparent-Image.png",
+          url:preview,
           width: 1200,
           height: 630,
           alt: "Greeting Card Preview",
@@ -34,10 +35,10 @@ export async function generateMetadata({ pathname }) {
     },
     twitter: {
       card: "summary_large_image",
-      site: "@VickyJya_medi",
+      site: "@VickyJya_media",
       title: "Create Your Greeting Card",
       description: "Personalized greeting cards with unique designs and messages.",
-      images: ["https://www.pngmart.com/files/11/Father-Christmas-PNG-Transparent-Image.png"],
+      images: [preview],
     },
   };
 
