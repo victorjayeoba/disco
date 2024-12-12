@@ -12,7 +12,7 @@ export async function generateMetadata({ params }) {
       type: "website",
       locale: "en_US",
       url: `https://disco-khaki.vercel.app/message/${params.id}`,
-      title: `Greeting for ${name}`,
+      title: `Greeting from ${name}`,
       description: message,
       images: [
         {
