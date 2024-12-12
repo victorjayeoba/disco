@@ -29,7 +29,7 @@ export default function Greet() {
 
       if (index !== -1) {
         const encodedMessage = index.toString();
-        const generatedLink = `${window.location.origin}/${encodedName}-${encodedMessage}`;
+        const generatedLink = `${window.location.origin}/message/${encodedName}-${encodedMessage}`;
         const shareMessage = `${name} has a message for you 🎅🏽🎄 👇🏽👇🏽\n🎄✨ ${generatedLink}`;
         window.open(`https://wa.me/?text=${encodeURIComponent(shareMessage)}`, "_blank");
       } else {
