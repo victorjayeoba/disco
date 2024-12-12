@@ -5,7 +5,6 @@ import { useRouter } from "next/navigation";
 export default function Greet() {
   const [name, setName] = useState("");
   const [message, setMessage] = useState("Wishing you a magical holiday season! 🎄");
-  const [generatedLink, setGeneratedLink] = useState("");
   const router = useRouter();
 
   // List of predefined Christmas messages
@@ -22,40 +21,20 @@ export default function Greet() {
     const randomIndex = Math.floor(Math.random() * randomMessages.length);
     setMessage(randomMessages[randomIndex]);
   };
-``
-  const handleGenerate = () => {
+
+  const handleShareWhatsApp = () => {
     if (name && message) {
       const encodedName = encodeURIComponent(name);
-    
-      let index = randomMessages.indexOf(message);
+      const index = randomMessages.indexOf(message);
 
       if (index !== -1) {
-          console.log(`Message found at index: ${index}`);
-          const encodedMessage = index.toString();
-          const url = `${window.location.origin}/${encodedName}-${encodedMessage}`;
-          setGeneratedLink(url);
-      } else {
-          console.log("Message not found in the array.");
-      }
-    }
-  };
-
-  const handleShare = (platform) => {
-    if (!generatedLink) return;
-
-    const shareMessage = `Check out my Christmas greeting! 🎄✨ ${generatedLink}`;
-    switch (platform) {
-      case "whatsapp":
+        const encodedMessage = index.toString();
+        const generatedLink = `${window.location.origin}/${encodedName}-${encodedMessage}`;
+        const shareMessage = `${name} has a message for you 🎅🏽🎄 👇🏽👇🏽\n🎄✨ ${generatedLink}`;
         window.open(`https://wa.me/?text=${encodeURIComponent(shareMessage)}`, "_blank");
-        break;
-      case "facebook":
-        window.open(`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(generatedLink)}`, "_blank");
-        break;
-      case "twitter":
-        window.open(`https://twitter.com/intent/tweet?text=${encodeURIComponent(shareMessage)}`, "_blank");
-        break;
-      default:
-        break;
+      } else {
+        console.log("Message not found in the array.");
+      }
     }
   };
 
@@ -84,7 +63,8 @@ export default function Greet() {
           value={name}
           onChange={(e) => setName(e.target.value)}
           className="w-full mb-4 px-3 py-2 rounded-lg text-black focus:outline-none focus:ring focus:ring-christmas-green animate-bounce"
-        required/>
+          required
+        />
         <div className="relative mb-4">
           <textarea
             placeholder="Your Christmas Message"
@@ -105,41 +85,13 @@ export default function Greet() {
           </button>
         </div>
 
-        {/* Generate and Share Section */}
-        {!generatedLink ? (
-          <button
-            onClick={handleGenerate}
-            className="w-full bg-christmas-green py-2 rounded-lg hover:bg-christmas-red transition font-semibold"
-          >
-            Generate Link
-          </button>
-        ) : (
-          <div className="flex flex-col items-center">
-            <p className="text-sm mt-4 mb-2 text-center">
-              Share your link with loved ones!👇🏽
-            </p>
-            <div className="flex space-x-2">
-              <button
-                onClick={() => handleShare("whatsapp")}
-                className="bg-green-500 text-white px-4 py-2 rounded hover:bg-green-600"
-              >
-                WhatsApp
-              </button>
-              <button
-                onClick={() => handleShare("facebook")}
-                className="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700"
-              >
-                Facebook
-              </button>
-              <button
-                onClick={() => handleShare("twitter")}
-                className="bg-sky-500 text-white px-4 py-2 rounded hover:bg-sky-600"
-              >
-                Twitter
-              </button>
-            </div>
-          </div>
-        )}
+        {/* Share Section */}
+        <button
+          onClick={handleShareWhatsApp}
+          className="w-full bg-green-500 py-2 rounded-lg hover:bg-green-600 transition font-semibold"
+        >
+          Share to WhatsApp
+        </button>
       </div>
     </div>
   );
