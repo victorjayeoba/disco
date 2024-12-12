@@ -6,7 +6,7 @@ export async function generateMetadata({ params }) {
   const [name, message] = params.id.split('-').map(decodeURIComponent);
 
   return {
-    title: `Greeting for ${name}`,
+    title: `Greeting from ${name}`,
     description: message,
     openGraph: {
       type: "website",
@@ -25,8 +25,8 @@ export async function generateMetadata({ params }) {
     },
     twitter: {
       card: "summary_large_image",
-      site: "@yourTwitterHandle",
-      title: `Greeting for ${name}`,
+      site: "https://disco-khaki.vercel.app/message/${params.id}",
+      title: `Greeting from ${name}`,
       description: message,
       images: [ "/image/preview.png"],
     },
