@@ -21,7 +21,7 @@ export async function generateMetadata({ pathname }) {
     openGraph: {
       type: "website",
       locale: "en_US",
-      url: https://disco-khaki.vercel.app${pathname},
+      url: `https://disco-khaki.vercel.app${pathname}`,
       title: "Create Your Greeting Card",
       description: "Personalized greeting cards with unique designs and messages.",
       images: [
@@ -52,7 +52,7 @@ export default function RootLayout({ children }) {
         {/* Head metadata automatically managed by Next.js */}
       </head>
       <body
-        className={${geistSans.variable} ${geistMono.variable} antialiased bg-black}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased bg-black`}
       >
         <Header />
         {children}
