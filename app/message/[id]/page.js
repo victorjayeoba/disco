@@ -2,8 +2,8 @@ import React from 'react';
 import Greeting_land from '../../components/greetings_land';
 
 export async function generateMetadata({ params }) {
-  // Extract `id` from params and decode it for name and message
-  const [name, message] = params.id.split('-').map(decodeURIComponent);
+  const url_params = await params
+  const [name, message] = await url_params?.id?.split('-').map(decodeURIComponent);
 
   return {
     title: `Greeting from ${name}`,
@@ -11,7 +11,7 @@ export async function generateMetadata({ params }) {
     openGraph: {
       type: "website",
       locale: "en_US",
-      url: `https://disco-khaki.vercel.app/message/${params.id}`,
+      url: `https://disco-khaki.vercel.app/message/${url_params?.id}`,
       title: `Greeting from ${name}`,
       description: message,
       images: [
@@ -25,7 +25,7 @@ export async function generateMetadata({ params }) {
     },
     twitter: {
       card: "summary_large_image",
-      site: "https://disco-khaki.vercel.app/message/${params.id}",
+      site: "https://disco-khaki.vercel.app/message/${params?.id}",
       title: `Greeting from ${name}`,
       description: message,
       images: [ "/image/preview.png"],
@@ -33,9 +33,10 @@ export async function generateMetadata({ params }) {
   };
 }
 
-export default function Page({ params }) {
+export default async function  Page({ params }) {
   // Extract `id` and split into name and message
-  const [name, message] = params.id.split('-').map(decodeURIComponent);
+  const url_params = await params
+  const [name, message] =  url_params?.id?.split('-').map(decodeURIComponent);
 
   return (
     <Greeting_land name={name} message={message} />
